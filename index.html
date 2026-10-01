@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Space Point Associate | Prime Land Syndication & Joint Development Sourcing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#070B14',
+                            900: '#0B111E',
+                            800: '#111827',
+                            700: '#1F293D',
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#E5C158',
+                            600: '#D4AF37',
+                            700: '#C5A059',
+                            800: '#997A2B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.15);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #C5A059 100%);
+        }
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-200 font-sans antialiased overflow-x-hidden selection:bg-gold-600 selection:text-navy-950">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-navy-900/90 backdrop-blur-md border-b border-gold-600/20" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold shadow-lg shadow-gold-600/20 group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-key text-lg"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-cinzel font-bold text-lg sm:text-xl tracking-tight text-white group-hover:text-gold-400 transition-colors leading-none">
+                                URBAN <span class="gold-gradient-text">SPACE POINT</span>
+                            </span>
+                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold tracking-[0.28em] text-gold-500/90 mt-1">
+                                ASSOCIATE
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-white hover:text-gold-500 transition-colors">Home</a>
+                    <a href="#about" class="text-slate-300 hover:text-gold-500 transition-colors">About Us</a>
+                    <a href="#services" class="text-slate-300 hover:text-gold-500 transition-colors">Services</a>
+                    <a href="#north-bengal" class="text-slate-300 hover:text-gold-500 transition-colors">North Bengal</a>
+                    <a href="#contact" class="text-slate-300 hover:text-gold-500 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Quick Action Buttons -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:+917063394335" class="flex items-center gap-2 px-4 py-2 rounded-full border border-gold-600/40 hover:border-gold-500 text-gold-500 hover:bg-gold-600/10 transition text-sm font-semibold">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span>+91 7063394335</span>
+                    </a>
+                    <a href="https://wa.me/917063394335" target="_blank" class="gold-gradient-bg text-navy-950 font-bold px-5 py-2 rounded-full hover:brightness-110 transition text-sm flex items-center gap-2 shadow-lg shadow-gold-600/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 border-b border-gold-600/20 px-4 pt-2 pb-6 space-y-4">
+            <a href="#home" class="block py-2 text-slate-200 hover:text-gold-500 font-medium">Home</a>
+            <a href="#about" class="block py-2 text-slate-200 hover:text-gold-500 font-medium">About Us</a>
+            <a href="#services" class="block py-2 text-slate-200 hover:text-gold-500 font-medium">Services</a>
+            <a href="#north-bengal" class="block py-2 text-slate-200 hover:text-gold-500 font-medium">North Bengal</a>
+            <a href="#contact" class="block py-2 text-slate-200 hover:text-gold-500 font-medium">Contact</a>
+            <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+                <a href="tel:+917063394335" class="w-full text-center py-2.5 rounded-lg border border-gold-600/40 text-gold-500 font-semibold text-sm">
+                    <i class="fa-solid fa-phone mr-2"></i> Call Us: +91 7063394335
+                </a>
+                <a href="https://wa.me/917063394335" target="_blank" class="w-full text-center py-2.5 rounded-lg gold-gradient-bg text-navy-950 font-bold text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg mr-1"></i> WhatsApp Inquiry
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Static Luxury Hero - No Transition Slides) -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-navy-950">
+        <!-- Static Background Overlay Glows -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold-600/10 rounded-full blur-[120px]"></div>
+            <div class="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-navy-800/80 rounded-full blur-[100px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:32px_32px] opacity-5"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center md:text-left w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text & Value Props -->
+                <div class="lg:col-span-7">
+                    <!-- Trust Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-gold-500/30 text-gold-400 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-shield-halved text-gold-500"></i>
+                        <span>100% Clear-Title & Due-Diligence Verified</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                        Prime Land Syndication & <span class="gold-gradient-text">Joint Development</span> Sourcing
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-light mb-8 leading-relaxed">
+                        Connecting visionary land owners, developers, and investors across North Bengal with legal transparency, high appreciation potential, and seamless execution.
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient-bg text-navy-950 font-bold text-center hover:brightness-110 transition shadow-xl shadow-gold-600/20 flex items-center justify-center gap-2">
+                            <span>Explore Opportunities</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="tel:+917063394335" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-semibold text-center hover:bg-gold-500/10 border border-gold-500/30 hover:border-gold-500 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>Contact Us Now</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats / Quick Proof -->
+                    <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold font-serif gold-gradient-text">100%</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Verified Clear Title</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-bold font-serif gold-gradient-text">North Bengal</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Regional Focus</div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="text-2xl sm:text-3xl font-bold font-serif gold-gradient-text">Prime</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Joint Ventures</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Static Logo Showcase Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="glass-card p-8 rounded-3xl border border-gold-500/30 shadow-2xl relative max-w-md w-full flex flex-col items-center text-center">
+                        <img src="logo_5.jpeg" 
+                             onerror="this.style.display='none'; document.getElementById('hero-svg-card').classList.remove('hidden');" 
+                             alt="Urban Space Point Brand Emblem" 
+                             class="max-h-64 w-auto object-contain drop-shadow-[0_15px_30px_rgba(212,175,55,0.3)] my-4">
+                        
+                        <!-- SVG Fallback matching logo emblem -->
+                        <div id="hero-svg-card" class="hidden flex-col items-center justify-center text-center py-6">
+                            <svg class="w-40 h-40 text-gold-500 drop-shadow-[0_10px_25px_rgba(212,175,55,0.4)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="65" cy="100" r="35" stroke="currentColor" stroke-width="8"/>
+                                <path d="M50 115 L65 95 L80 115 Z" fill="#0B111E" stroke="currentColor" stroke-width="4"/>
+                                <rect x="60" y="105" width="4" height="4" fill="currentColor"/>
+                                <rect x="66" y="105" width="4" height="4" fill="currentColor"/>
+                                <rect x="60" y="111" width="4" height="4" fill="currentColor"/>
+                                <rect x="66" y="111" width="4" height="4" fill="currentColor"/>
+                                <path d="M98 100 H165 V112 H155 V125 H143 V112 H135 V120 H125 V100 Z" fill="currentColor"/>
+                                <path d="M120 98 V70 L130 60 V98 Z" fill="currentColor"/>
+                                <path d="M132 98 V75 L140 80 V98 Z" fill="#0B111E"/>
+                                <path d="M142 98 V82 L150 85 V98 Z" fill="currentColor"/>
+                            </svg>
+                            <h3 class="font-cinzel text-xl font-bold tracking-wider text-white mt-4">
+                                URBAN <span class="gold-gradient-text">SPACE POINT</span>
+                            </h3>
+                            <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mt-1">ASSOCIATE</p>
+                        </div>
+                        <div class="mt-2 pt-4 border-t border-slate-800/80 w-full">
+                            <p class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Siliguri • West Bengal</p>
+                            <p class="text-xs text-slate-400 mt-1">Prime Land & Commercial Sourcing Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="about" class="py-20 bg-navy-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-gold-500 mb-2">Why Partner With Us</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-white">Uncompromising Standards in Real Estate Sourcing</p>
+                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold text-xl mb-6 shadow-lg shadow-gold-600/20">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">100% Clear Title</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Every land holding undergoes exhaustive chain-of-title audits ensuring 100% legal clarity without encumbrances.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold text-xl mb-6 shadow-lg shadow-gold-600/20">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Due-Diligence Verified</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Detailed environmental, legal, zonal classification, and municipal due diligence for risk-free acquisitions.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold text-xl mb-6 shadow-lg shadow-gold-600/20">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Joint Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Bridging high-capital real estate developers with strategic landowners for mutually lucrative venture structures.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold text-xl mb-6 shadow-lg shadow-gold-600/20">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">North Bengal Network</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Deep-rooted local insights and access to prime land banks across Siliguri and high-growth North Bengal sectors.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-navy-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-gold-500 mb-2">Our Core Expertise</h2>
+                    <p class="text-3xl sm:text-4xl font-serif font-bold text-white">Tailored Land & Real Estate Solutions</p>
+                </div>
+                <p class="text-slate-400 max-w-md mt-4 md:mt-0 text-sm">
+                    Providing end-to-end advisory and sourcing tailored for commercial builders, industrial hubs, and institutional land buyers.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="Land Syndication" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Prime Land Syndication</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Aggregating small parcel holdings into prime commercial and residential mega-plots ready for immediate development.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?q=80&w=800&auto=format&fit=crop" alt="Joint Development" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Joint Development Sourcing</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Formulating structured Joint Venture (JV) arrangements with win-win terms for both property owners and developers.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop" alt="Legal & Due Diligence" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Due Diligence & Title Verification</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Comprehensive background checks, mutation verification, search reports, and legal clearance before transaction signing.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Commercial Plots" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Commercial & Retail Land Sourcing</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            High-visibility commercial plots suitable for shopping complexes, hotels, warehousing, and corporate headquarters.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Residential Enclaves" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Residential Housing Land Sourcing</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Strategic acreage for gated residential townships, luxury villa projects, and high-rise apartment complexes.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-card glass-card-hover rounded-2xl overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Strategic Investment Advisory" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-gold-500 transition-colors">Strategic Land Consultancy</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                            Growth-corridor analytics, land valuation services, and exit strategy planning for high-net-worth investors.
+                        </p>
+                        <a href="#contact" class="inline-flex items-center text-xs font-bold text-gold-500 uppercase tracking-wider hover:text-gold-400 gap-1">
+                            <span>Inquire Service</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Expertise Section -->
+    <section id="north-bengal" class="py-20 bg-navy-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-600/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Regional Leadership</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight mb-6">
+                        Gateway to Real Estate Expansion in <span class="gold-gradient-text">North Bengal</span>
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Siliguri and North Bengal serve as the pivotal economic corridor connecting the Northeast with Mainland India. Rapid infrastructure expansion, highway corridors, and commercial growth make this the prime hotbed for land syndication.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full gold-gradient-bg flex items-center justify-center text-navy-950 text-xs font-bold mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Siliguri Commercial Hub</h4>
+                                <p class="text-slate-400 text-sm">Ward 20, Subhas Pally, Eastern Bypass, and 3rd Mahananda Bridge growth zones.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full gold-gradient-bg flex items-center justify-center text-navy-950 text-xs font-bold mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Jalpaiguri & Foothills Belt</h4>
+                                <p class="text-slate-400 text-sm">Industrial corridors, tea estate adjacency parcels, and resort development lands.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full gold-gradient-bg flex items-center justify-center text-navy-950 text-xs font-bold mt-1">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">High-Yield Highway Corridors</h4>
+                                <p class="text-slate-400 text-sm">NH-31, NH-55, and Asian Highway connected land banks suited for logistics hubs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card p-3 rounded-2xl border border-gold-500/30">
+                        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1000&auto=format&fit=crop" alt="North Bengal Real Estate" class="rounded-xl w-full h-96 object-cover">
+                    </div>
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -left-6 glass-card rounded-2xl p-4 border border-gold-500/40 hidden sm:block max-w-xs shadow-2xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-950 font-bold">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white text-sm font-bold">Headquartered in Siliguri</h5>
+                                <p class="text-slate-400 text-xs">Subhas Pally, Ward 20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Generation Section -->
+    <section id="contact" class="py-24 bg-navy-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-gold-500 mb-2">Get In Touch</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-white">Start Your Land Syndication Partnering</p>
+                <div class="w-16 h-1 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Information -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl border border-gold-500/30">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold shrink-0">
+                                    <i class="fa-solid fa-location-dot text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Office Address</h4>
+                                    <p class="text-white font-medium mt-1">PC3P+855, Ward 20, Subhas Pally, Siliguri, West Bengal 734001</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold shrink-0">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Mobile Contact</h4>
+                                    <a href="tel:+917063394335" class="text-white font-medium mt-1 block hover:text-gold-500 transition">+91 7063394335</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center text-navy-950 font-bold shrink-0">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Email Address</h4>
+                                    <a href="mailto:urbanspace706@gmail.com" class="text-white font-medium mt-1 block hover:text-gold-500 transition">urbanspace706@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Google Map Link CTA -->
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <a href="https://maps.google.com/?q=PC3P%2B855,+Ward+20,+Subhas+Pally,+Siliguri,+West+Bengal,+India&ftid=0x39e44179c0084907:0x70bd0e653ca07288" target="_blank" class="w-full glass-card hover:bg-gold-500/10 text-gold-400 hover:text-gold-300 font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 border border-gold-500/30 transition text-sm">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <span>Open Google Maps Directions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Live Functional Google Map Container -->
+                <div class="glass-card p-2 rounded-2xl overflow-hidden h-72 border border-gold-500/20 shadow-xl relative">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=PC3P%2B855%2C%20Ward%2020%2C%20Subhas%20Pally%2C%20Siliguri%2C%20West%20Bengal%20734001&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Urban Space Point Location Map">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Lead Inquiry Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 sm:p-10 rounded-2xl border border-gold-500/30">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Send an Inquiry</h3>
+                        <p class="text-slate-400 text-sm mb-8">Fill out your requirement below. Our land syndication specialists will get back to you within 24 hours.</p>
+
+                        <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Full Name *</label>
+                                    <input type="text" id="name" required placeholder="e.g. Rahul Sharma" class="w-full bg-navy-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm transition">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Phone / WhatsApp *</label>
+                                    <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX" class="w-full bg-navy-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm transition">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Email Address *</label>
+                                    <input type="email" id="email" required placeholder="name@example.com" class="w-full bg-navy-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm transition">
+                                </div>
+                                <div>
+                                    <label for="interest" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Requirement Type</label>
+                                    <select id="interest" class="w-full bg-navy-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm transition">
+                                        <option value="Land Syndication">Land Syndication</option>
+                                        <option value="Joint Development Sourcing">Joint Development Sourcing</option>
+                                        <option value="Commercial Land Sourcing">Commercial Plot Sourcing</option>
+                                        <option value="Residential Mega Land">Residential Mega Parcel</option>
+                                        <option value="Legal & Title Due Diligence">Legal & Due Diligence</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-semibold uppercase text-slate-300 mb-2">Message / Parcel Details</label>
+                                <textarea id="message" rows="4" placeholder="Mention budget, plot size, location preference, or JV requirements..." class="w-full bg-navy-900/80 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 text-sm transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full gold-gradient-bg text-navy-950 font-bold py-4 rounded-xl hover:brightness-110 transition shadow-lg shadow-gold-600/20 text-center flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Confidential Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-gold-600/20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Column 1: Brand Info -->
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="w-9 h-9 rounded-lg gold-gradient-bg flex items-center justify-center text-navy-950 font-bold shadow-md">
+                            <i class="fa-solid fa-key text-base"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-cinzel font-bold text-base tracking-tight text-white group-hover:text-gold-400 transition-colors leading-none">
+                                URBAN <span class="gold-gradient-text">SPACE POINT</span>
+                            </span>
+                            <span class="text-[9px] uppercase font-semibold tracking-[0.25em] text-gold-500/90 mt-1">
+                                ASSOCIATE
+                            </span>
+                        </div>
+                    </a>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Prime Land Syndication & Joint Development Sourcing specialists in North Bengal. Certified clear-title and due-diligence verified properties.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-600/20 pb-2">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="text-slate-400 hover:text-gold-500 transition">Home Page</a></li>
+                        <li><a href="#about" class="text-slate-400 hover:text-gold-500 transition">About Associate</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-gold-500 transition">Services Directory</a></li>
+                        <li><a href="#north-bengal" class="text-slate-400 hover:text-gold-500 transition">North Bengal Region</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-gold-500 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-600/20 pb-2">Our Solutions</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li>Prime Land Syndication</li>
+                        <li>Joint Development Sourcing</li>
+                        <li>100% Clear-Title Due Diligence</li>
+                        <li>Commercial & Industrial Plots</li>
+                        <li>Residential Megaland Advisory</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Direct Contacts -->
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-gold-600/20 pb-2">Reach Us</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>+91 7063394335</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>urbanspace706@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-slate-400">
+                            <i class="fa-solid fa-location-dot text-gold-500 mt-0.5"></i>
+                            <span>Siliguri, Ward 20, West Bengal 734001</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Urban Space Point Associate. All rights reserved.</p>
+                <p>Designed for Luxury Real Estate Sourcing & Syndication in North Bengal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Success Confirmation Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm hidden">
+        <div class="glass-card max-w-md w-full p-8 rounded-2xl border border-gold-500/50 text-center relative shadow-2xl">
+            <div class="w-16 h-16 rounded-full gold-gradient-bg flex items-center justify-center text-navy-950 text-2xl font-bold mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-white mb-2">Inquiry Received!</h3>
+            <p class="text-slate-300 text-sm mb-6">
+                Thank you for reaching out to <strong class="text-gold-400">Urban Space Point Associate</strong>. Our land specialists will review your requirements and connect with you shortly.
+            </p>
+            <button onclick="closeModal()" class="w-full gold-gradient-bg text-navy-950 font-bold py-3 rounded-xl hover:brightness-110 transition">
+                Close Window
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Lead Form Handling
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('lead-form').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Header Background Scroll Shadow Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl', 'bg-navy-950/95');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-navy-950/95');
+            }
+        });
+    </script>
+</body>
+</html>
